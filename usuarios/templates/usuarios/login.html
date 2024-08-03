@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar a la Clínica Médica</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1>Bienvenido a la HealthWave</h1>
+            <p>Software en la Nube para Administración de Clínicas Médicas</p>
+            <!-- Asegúrate de que esta imagen exista en la carpeta static/images -->
+            <img src="{% static 'images/medical-team.png' %}" alt="Medical Team">
+        </div>
+        <div class="right-side">
+            <h2>Entrar a la Clínica Médica</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Correo electrónico</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+                <div class="links">
+                    <a href="{% url 'password_reset' %}">Olvidé mi contraseña...</a>
+                    <a href="{% url 'registro' %}">Crear una Cuenta</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

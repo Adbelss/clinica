@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Doctor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido, {{ user.username }}</h1>
+        <p>Este es tu dashboard.</p>
+        <!-- Añade más contenido específico para el doctor aquí -->
+    </div>
+</body>
+</html>
